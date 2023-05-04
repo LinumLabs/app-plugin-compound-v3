@@ -42,8 +42,8 @@ static void set_send_asset(ethQueryContractUI_t *msg, const context_t *context) 
         ticker = msg->network_ticker;
     }
 
-    amountToString(context->amount_received,
-                   sizeof(context->amount_received),
+    amountToString(context->amount,
+                   sizeof(context->amount),
                    decimals,
                    ticker,
                    msg->msg,
@@ -87,7 +87,7 @@ void handle_query_contract_ui(void *parameters) {
 
     // EDIT THIS: Adapt the cases for the screens you'd like to display.
     // switch(context->selectorIndex){
-    //     case COMPOUND_SUPPLY:
+    //     case SUPPLY:
         
     // }
     switch (msg->screenIndex) {

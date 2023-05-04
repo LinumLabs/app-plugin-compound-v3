@@ -6,7 +6,7 @@
 
 // Number of selectors defined in this plugin. Should match the enum `selector_t`.
 // EDIT THIS: Put in the number of selectors your plugin is going to support.
-#define NUM_SELECTORS 1
+#define NUM_SELECTORS 2
 
 // Name of the plugin.
 // EDIT THIS: Replace with your plugin name.
@@ -16,13 +16,15 @@
 // Should follow the exact same order as the array declared in main.c
 // EDIT THIS: Change the naming (`selector_t`), and add your selector names.
 typedef enum {
-    COMPOUND_SUPPLY = 0,
+   SUPPLY = 0,
+   APPROVE = 1
 } selector_t;
 
 // Enumeration used to parse the smart contract data.
 // EDIT THIS: Adapt the parameter names here.
 typedef enum {
     ASSET,
+    SPENDER,
     AMOUNT,
     UNEXPECTED_PARAMETER,
 } parameter;
@@ -45,7 +47,8 @@ extern compoundAssetDefinition_t const COMPOUND_ASSETS[NUM_COMPOUND_ASSETS];
 typedef struct context_t {
     // For display.
     uint8_t asset[ADDRESS_LENGTH];
-    uint8_t amount_sent[INT256_LENGTH];
+    uint8_t spender[ADDRESS_LENGTH];
+    uint8_t amount[INT256_LENGTH];
     char ticker[MAX_TICKER_LEN];
     uint8_t decimals;
     uint8_t token_found;

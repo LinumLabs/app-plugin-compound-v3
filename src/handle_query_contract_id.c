@@ -10,7 +10,7 @@ void handle_query_contract_id(void *parameters) {
     // For the first screen, display the plugin name.
     strlcpy(msg->name, PLUGIN_NAME, msg->nameLength);
 
-    if (context->selectorIndex == COMPOUND_SUPPLY) {
+    if (context->selectorIndex == SUPPLY) {
         strlcpy(msg->version, "Supply", msg->versionLength);
         msg->result = ETH_PLUGIN_RESULT_OK;
     } else {

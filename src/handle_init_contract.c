@@ -45,7 +45,7 @@ void handle_init_contract(void *parameters) {
     // EDIT THIS: Adapt the `cases`, and set the `next_param` to be the first parameter you expect
     // to parse.
     switch (context->selectorIndex) {
-        case COMPOUND_SUPPLY:
+        case SUPPLY:
             context->next_param = ASSET;
             break;
         // Keep this

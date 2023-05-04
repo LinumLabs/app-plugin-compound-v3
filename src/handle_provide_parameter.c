@@ -41,7 +41,7 @@ void handle_provide_parameter(void *parameters) {
 
     // EDIT THIS: adapt the cases and the names of the functions.
     switch (context->selectorIndex) {
-        case COMPOUND_SUPPLY:
+        case SUPPLY:
             handle_provide_asset(msg, context);
             break;
         default:
