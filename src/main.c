@@ -26,16 +26,25 @@
 
 // List of selectors supported by this plugin.
 // EDIT THIS: Adapt the variable names and change the `0x` values to match your selectors.
-static const uint32_t SWAP_EXACT_ETH_FOR_TOKENS_SELECTOR = 0x7ff36ab5;
-static const uint32_t BOILERPLATE_DUMMY_SELECTOR_2 = 0x13374242;
+static const uint32_t COMPOUND_SUPPLY_SELECTOR = 0xf2b9fdb8;
 
 // Array of all the different boilerplate selectors. Make sure this follows the same order as the
 // enum defined in `boilerplate_plugin.h`
 // EDIT THIS: Use the names of the array declared above.
-const uint32_t BOILERPLATE_SELECTORS[NUM_SELECTORS] = {
-    SWAP_EXACT_ETH_FOR_TOKENS_SELECTOR,
-    BOILERPLATE_DUMMY_SELECTOR_2,
+const uint32_t COMPOUND_SELECTORS[NUM_SELECTORS] = {
+    COMPOUND_SUPPLY_SELECTOR,
 };
+
+const compoundAssetDefinition_t COMPOUND_ASSETS[NUM_YEARN_VAULTS] = {
+    {{0x0d, 0x50, 0x0B, 0x1d, 0x8E, 0x8e, 0xF3, 0x1E, 0x21, 0xC9,
+      0x9d, 0x1D, 0xb9, 0xA6, 0x44, 0x4d, 0x3A, 0xDf, 0x12, 0x70}
+     "WMATIC",
+     18},
+    {{0x27, 0x91, 0xBc, 0xa1, 0xf2, 0xde, 0x46, 0x61, 0xED, 0x88,
+      0xA3, 0x0C, 0x99, 0xA7, 0xa9, 0x44, 0x9A, 0xa8, 0x41, 0x74},
+     "USDC",
+     6},
+}
 
 // Function to dispatch calls from the ethereum app.
 void dispatch_plugin_calls(int message, void *parameters) {
