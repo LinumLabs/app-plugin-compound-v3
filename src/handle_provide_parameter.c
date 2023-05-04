@@ -1,4 +1,4 @@
-#include "boilerplate_plugin.h"
+#include "compound_plugin.h"
 
 static void handle_provide_asset(ethPluginProvideParameter_t *msg, context_t *context) {
     if (context->go_to_offset) {
