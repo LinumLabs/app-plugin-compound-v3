@@ -9,7 +9,7 @@ static void handle_provide_asset(ethPluginProvideParameter_t *msg, context_t *co
     }
     switch (context->next_param) {
         case ASSET:  // token address
-            copy_address(context->beneficiary, msg->parameter, sizeof(context->beneficiary));
+            copy_address(context->asset, msg->parameter, sizeof(context->asset));
             context->next_param = AMOUNT;
             break;
         case AMOUNT:  // amount

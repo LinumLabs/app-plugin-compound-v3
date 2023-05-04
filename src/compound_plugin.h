@@ -34,7 +34,7 @@ extern const uint32_t COMPOUND_SELECTORS[NUM_SELECTORS];
 
 typedef struct compoundAssetDefinition_t {
     uint8_t address[ADDRESS_LENGTH];
-    char assetName[MAX_VAULT_TICKER_LEN];
+    char assetName[MAX_TICKER_LEN];
     uint8_t decimals;
 } compoundAssetDefinition_t;
 
